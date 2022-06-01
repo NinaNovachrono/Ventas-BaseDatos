@@ -1,0 +1,50 @@
+<!--
+    Sánchez Plazola José Abraham
+    02/08/2021
+    Vista para el reproductor de musica (Aplicacion JavaFX)
+-->
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TextField?>
+
+<VBox fx:id="mainVBox" fx:controller="Controladores.ControladorReproductorXML"
+      xmlns:fx="http://javafx.com/fxml" spacing="10">
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15" />
+    </padding>
+    <HBox spacing="20">
+        <Button prefWidth="175" text="Mostrar biblioteca entera" onAction="#showBiblioteca"/>
+        <Button prefWidth="200" text="Mostrar historial de usuario" onAction="#loadUserBiblio"/>
+        <Button prefWidth="175" text="Añadir directorio local" onAction="#addDirectory"/>
+    </HBox>
+    <ListView fx:id="playlistView"/>
+    <HBox spacing="20">
+        <Button prefWidth="175" text="Seleccionar playlist" onAction="#loadPlaylistSongs"/>
+        <Button prefWidth="175" text="Crear nueva playlist" onAction="#crearPlaylist"/>
+    </HBox>
+    <ListView fx:id="songListView" />
+    <HBox spacing="20">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10" />
+        </padding>
+        <Label text="Cancion actual: " />
+        <Label fx:id="currentSong"/>
+    </HBox>
+    <HBox spacing="20">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10" />
+        </padding>
+        <Button text="Iniciar" prefWidth="100" onAction="#play" />
+        <Button text="Detener" prefWidth="100" onAction="#stop" />
+        <Button text="Regresar" prefWidth="100" onAction="#back"/>
+    </HBox>
+    
+</VBox>
